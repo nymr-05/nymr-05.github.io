@@ -1,0 +1,139 @@
+.navbar-header{
+  font-family: sans-serif, serif;
+}
+h1,h2,h3{
+  font-weight: bold;
+}
+#Home {
+  background: black;
+  padding: 50px;
+  height:auto;
+  color: #fff;
+  background-image: url(images/esports-bg.png);
+  background-position: center;
+  background-color: black;
+}
+ #About {
+   padding:50px;
+   height:auto;
+   color: #000;
+   background-color: white;
+ }
+ .intro{
+   text-align: center;
+   align-items: center;
+   padding: 50px;
+   margin: 20px 10px;
+ }
+ .intro img{
+   margin: auto;
+   padding: 20px;
+   border-radius: 50%;
+ }
+ .intro img:hover{
+   border: 5px solid;
+   border-color: lightgrey;
+ }
+ .table{
+   width: 90%;
+   margin: auto;
+
+ }
+ #Contacts {
+   padding:50px 0;
+   height:auto;
+   color: #34353b;
+   background-color: #e3e3e3;
+ }
+.button{
+  background-color: transparent;
+  border: 3px solid;
+  color: white;
+  border-radius: 20px;
+  padding: 20px 50px;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  margin: 5px;
+  font-weight: bold;
+  border-color: white;
+}
+.button:hover{
+  background-color: white;
+  color: black;
+}
+#send{
+  background-color: #0285e3;
+  padding: 5px 15px;
+  color: white;
+  font-weight: bold;
+}
+#send:hover{
+  background: #134e78;
+}
+#news{
+  height: 600px;
+}
+#form{
+  margin-top: 100px;
+  margin-bottom: 20px;
+  vertical-align: center;
+}
+#submit{
+  margin-top: 20px;
+  margin-right: 20%;
+}
+.in-text, .game{
+  width: 50%;
+  margin: 8px 5px;
+}
+#form label{
+  width: 30%;
+  text-align: right;
+}
+footer{
+  background-color: #34353b;
+  height: auto;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-size: 12px;
+}
+footer .fa{
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius:50%;
+  border: 1px solid;
+  border-color: white;
+  margin: 5px 2px;
+}
+.fa:hover{
+  background-color: white;
+  transition-duration: .3s;
+}
+footer .fa-facebook{
+  padding-left: 14px;
+  padding-right: 14px;
+}
+#shop-bg{
+  width: 100%;
+}
+#products{
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px 10px;
+
+}
+#products img{
+  border: 1px solid grey;
+  padding: 5px;
+}
+#products img:hover{
+  padding: 20px;
+  border: 5px solid lightgrey;
+  border-radius: 5px;
+  transition-duration: .7s;
+}

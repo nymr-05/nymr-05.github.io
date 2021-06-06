@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GΞNERIC Esports</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          <a class="navbar-brand" href="#"><strong>GΞNERIC</strong><small>esports</small></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="gen-index.html">Home</a></li>
+          <li><a href="gen-news.html">News</a></li>
+          <li><a href="gen-shop.html">Shop</a></li>
+        </ul>
+        <button type="button" href="challange.html" class="btn btn-danger navbar-btn navbar-right" name="challange"><span class="glyphicon glyphicon-king"></span> Chalange Us</button>
+        </div>
+      </div>
+      </nav>
+    </header>
+
+      <div id="form" class="container">
+        <h2>Want to chalange us?</h2>
+        <p>Fill up this form. We will contact you as soon as possible.</p>
+        <div class="row">
+          <div class="col-sm-8">
+            <form class="ch-form" action="index.html" method="post">
+              <fieldset>
+                <legend>Team Information</legend>
+                <label for="teamName">Team Name:</label>
+                <input type="text" name="teamName" class="in-text" required>
+                <label for="teamEmail">Email:</label>
+                <input type="email" name="teamEmail" required class="in-text">
+                <label for="date">Fixure Date:</label>
+                <input type="date" name="date" class="in-text" value="2021-01-01" required>
+                <label for="game">Game:</label>
+                <select class="game" name="game">
+                  <option value="valorant">Valorant</option>
+                  <option value="csgo">Counter-Strike</option>
+                  <option value="r6s">Rainbow Six Siege</option>
+                  <option value="rocket">Rocket League</option>
+                  <option value="paladins">Paladins</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <legend>Players Information</legend>
+                <label for="igl">Team Leader:</label>
+                <input type="text" name="igl" class="in-text" required>
+                <label for="player1">Player 1:</label>
+                <input type="text" name="player1" class="in-text" required>
+                <label for="player2">Player 2:</label>
+                <input type="text" name="player2" class="in-text" required>
+                <label for="player3">Player 3:</label>
+                <input type="text" name="player3" class="in-text" required>
+                <label for="player4">Player 4:</label>
+                <input type="text" name="player4" class="in-text" required>
+                <label for="player5">Player 5:</label>
+                <input type="text" name="player5" class="in-text" required>
+                <label for="sub">Substitution:</label>
+                <input type="text" name="sub" class="in-text">
+              </fieldset>
+              <input type="submit" class="btn btn-primary pull-right" id="submit" name="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="row">
+          <div class="col-sm-4 mx-auto">
+            <h2 class="text-left">GΞNERIC eSprots</h2>
+            <p class="text-left">We hope to conquer the esports industy of Bangladesh.</p>
+          </div>
+          <div class="col-sm-8 mx-auto">
+            <a href="https://www.facebook.com/generic-esports"> <i class="fa fa-facebook"></i> </a>
+            <a href="https://www.twitter.com/generic-esports"> <i class="fa fa-twitter"></i> </a>
+            <a href="https://www.instagram.com/generic-esports"> <i class="fa fa-instagram"></i> </a>
+            <h5>Socials</h5>
+          </div>
+        </div>
+        <div class="copyright text-center">
+          <span class="glyphicon glyphicon-copyright-mark">2021-Naimur Rahman</span>
+        </div>
+      </footer>
+  </body>
+</html>
