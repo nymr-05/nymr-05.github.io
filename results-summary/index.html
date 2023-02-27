@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Outfit&family=Overpass&family=Teko&display=swap');
+    *{
+      font-family: 'Hanken Grotesk';
+    }
+    
+    main{
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contents{
+      display: flex;
+      background-color: white;
+      height: 22rem;
+      width: 30rem;
+      border-radius: 25px;
+      box-shadow: 20px 20px 50px rgb(183, 206, 224);
+    }
+    .result{
+      background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      color: white;
+      text-align: center;
+      border-radius: 25px;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .score-area{
+      background: linear-gradient(hsla(256, 72%, 46%, 1),transparent);
+      border-radius: 50%;
+      width: 8rem;
+      height: 8rem;
+      vertical-align: middle;
+    }
+    .summary{
+      padding: 0px 20px;
+      width: 100%;
+    }
+    .list{
+      margin: 5px 0px;
+      height: 2rem;
+      display: inline-block;
+      font-weight: bold;
+      padding: 10px 10px 0px 5px;
+      border-radius: 5px;
+      color: #303b5a;
+    }
+    .list img{
+      vertical-align: middle;
+    }
+    #reaction { background-color: #ff555510;}
+    .reaction { color: #f55;}
+    #memory { background-color: #FFB21E10;}
+    .memory { color: #FFB21E;}
+    #verbal { background-color: #00BB8F10;}
+    .verbal { color: #00BB8F;}
+    #visual { background-color: #1125D610;}
+    .visual { color: #1125D6;}
+    .continue-btn{
+      border: none;
+      width: 100%;
+      height: 3rem;
+      margin-top: 15px;
+      border-radius: 25px;
+      background-color: #303b5a;
+      color: white;
+    }
+    .continue-btn:hover{
+      background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      transition: .5s ease-in-out;
+      cursor: pointer;
+    }
+
+
+
+    @media screen and (max-width: 495px) {
+      .contents{
+        min-width: 100vw;
+        min-height: 110vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 0px;
+      }
+      .result{
+        margin-top: -30px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+      .summary{
+        padding: 0;
+        text-align: center;
+      }
+      .summary h4{
+        text-align: start;
+        margin-left: 3rem;
+      }
+      .continue-btn{
+        width: 90%;
+      }
+      .list{
+        display: block;
+        width: 80%;
+        margin-left: 10%;
+      }
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="contents">
+      <section class="result">
+        <h4 style="opacity: .8;" role="heading">Your Result</h4>
+        <div class="score-area">
+          <p><span role="score" style="font-size: 3rem; font-weight: bold;">76</span><br>
+            <span style="opacity: .5; font-size: .8rem;">of 100</span></p>
+          
+        </div>
+        <h2>Great</h2>
+        <span style="opacity:.8; font-size: 1rem;">You scored higher than 65% of the people who have taken these tests.</span>
+  
+      </section>      
+      <section class="summary">
+        <h4 style="color:hsl(224, 30%, 27%);">Summary</h4>
+
+          <div id="reaction" class="list"><span class="reaction"><img src="assets/images/icon-reaction.svg" alt="reaction">&nbsp;Reaction</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80 <span style="opacity: .5;"> / 100 </span></div>
+          <div id="memory" class="list"><span class="memory"><img src="assets/images/icon-memory.svg" alt="memory">&nbsp;Memory</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 92 <span style="opacity: 0.5;"> / 100</span></div>
+          <div id="verbal" class="list"><span class="verbal"><img src="assets/images/icon-verbal.svg" alt="verbal">&nbsp;Verbal</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 61 <span style="opacity: .5;"> / 100</span></div>
+          <div id="visual" class="list"><span class="visual"><img src="assets/images/icon-visual.svg" alt="visual">&nbsp;Visual</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 72 <span style="opacity: .5;"> / 100</span></div>
+  
+    
+        <button class="continue-btn" role="continue">Continue</button>
+  
+      </section>
+    </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/nymr-05">Naimur Rahman</a>.
+  </div>
+</body>
+</html>
