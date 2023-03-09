@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+      min-height: 98vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    }
+
+    main {
+      width: 60rem;
+      background-color: #ffffff;
+      box-shadow: 50px 50px 100px #0000004f;
+      border-radius: 25px;
+      position: relative;
+    }
+    #box-desktop {
+      position: absolute;
+      width: 10rem;
+      left: -8%;
+      top: 37%;
+      z-index: 10;
+    }
+    .row {
+      display: flex;
+      overflow: hidden;
+    }
+    .faq-img {
+      width: 50%;
+      position: relative;
+      margin-left: -5rem;
+      margin-top: 2rem;
+      overflow: hidden;
+      background: url(images/bg-pattern-desktop.svg);
+      background-position-x: right;
+      background-position-y: 70%;
+    }
+    img {
+      width: 100%;
+    }
+    .faq-body {
+      width: 50%;
+      padding: 2rem;
+      padding-bottom: 3rem;
+      margin-left: 1rem;
+    }
+
+    .faq-body h1 {
+      color: hsl(238, 29%, 16%);
+    }
+
+    .accordion {
+      font-family: 'Kumbh Sans', sans-serif;
+      margin: 10px 0px;
+      color: hsl(237, 12%, 33%);
+      width: 100%;
+      background-color: white;
+      border: none;
+      padding: 8px 0px;
+      text-align: start;
+      cursor: pointer;
+    }
+
+    .accordion::after {
+      content: url(images/icon-arrow-down.svg);
+      float: right;
+    }
+
+    .accordion:hover {
+      color: hsl(14, 88%, 65%);
+    }
+
+    .accordion-active,
+    .accordion-active:hover {
+      font-weight: 700;
+      color: hsl(238, 29%, 16%);
+    }
+
+    .accordion-active::after {
+      rotate: 180deg;
+    }
+
+    .accordion-panel {
+      max-height: 0px;
+      overflow: hidden;
+      transition: .3s ease-in-out;
+      color: hsl(240, 6%, 50%);
+      font-size: 12px;
+      border-bottom: 1px solid hsl(240, 5%, 91%);
+    }
+    .accordion-panel p{
+      margin-top: 0px;
+    }
+    .accordion-panel-active{
+      max-height: 4rem;
+    }
+  @media screen and (max-width: 500px) {
+    .row{
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+      margin: 20px;
+    }
+    .faq-img{
+      width: 70%;
+      position: absolute;
+      margin-inline: auto;
+      background: url(images/bg-pattern-mobile.svg);
+      background-position-x: 50%;
+      background-position-y: 100%;
+      background-size: 120%;
+      background-repeat: no-repeat;
+      top: -40%;
+      left: 15%;
+      height: 15rem;
+
+    }
+    #faq-woman{
+      content: url(images/illustration-woman-online-mobile.svg);
+    }
+    #box-desktop{
+      display: none;
+    }
+    .faq-body{
+      width: auto;
+      margin-left: 0px;
+      margin-top: 20px;
+      margin-bottom: auto;
+    }
+
+
+
+
+    .attribution{
+      position: relative;
+    }
+  }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: absolute;
+      bottom: 10px;
+      color: #fff
+    }
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <img src="images/illustration-box-desktop.svg" id="box-desktop" alt="">
+    <div class="row">
+      <section class="faq-img">
+        <!-- <img src="images/bg-pattern-desktop.svg" id="faq-bg-pattern" alt=""> -->
+        <img src="images/illustration-woman-online-desktop.svg" id="faq-woman" alt="">
+      </section>
+      <section class="faq-body">
+        <h1>FAQ</h1>
+
+        <button class="accordion">How many team members can I invite?</button>
+        <div class="accordion-panel">
+          <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+            team members for the Premium plan.</p>
+        </div>
+
+        <button class="accordion">What is the maximum file upload size?</button>
+        <div class="accordion-panel">
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+
+        <button class="accordion">How do I reset my password?</button>
+        <div class="accordion-panel">
+          <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.</p>
+        </div>
+
+        <button class="accordion">Can I cancel my subscription?</button>
+        <div class="accordion-panel">
+          <p>Yes! Send us a message and we/'ll process your request no questions asked.</p>
+        </div>
+
+        <button class="accordion">Do you provide additional support?</button>
+        <div class="accordion-panel">
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+
+      </section>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script>
+    var accordion = document.getElementsByClassName('accordion');
+    var panel = document.getElementsByClassName('accordion-panel');
+    for(let i=0;i <accordion.length; i++){
+      accordion[i].addEventListener("click", function(){
+        this.classList.toggle("accordion-active");
+        //panel stuff
+        panel[i].classList.toggle("accordion-panel-active");
+      });
+    }
+    
+  </script>
+</body>
+
+</html>
