@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    :root {
+      --palePink: hsl(0, 36%, 70%);
+      --darkGrey: hsl(0, 6%, 24%);
+      --softPink: rgb(249, 98, 98);
+    }
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      background: url(images/bg-pattern-desktop.svg);
+      min-height: 100vh;
+    }
+
+
+    nav {
+      width: 30%;
+      position: absolute;
+      top: 8%;
+      left: 15%;
+      
+    }
+    footer{
+      position: relative;
+      padding: 10px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-inline: auto;
+    }
+
+    .hero-text {
+      width: 35%;
+      margin-left: auto;
+      margin-right: 15%;
+    }
+    .hero-img{
+      float: right;
+    }
+
+    .heading-1{
+      font-size: 400%; text-transform: uppercase; font-weight: 300; color: var(--palePink); letter-spacing: .5rem;
+    }
+
+    .heading-2{
+      font-size: 400%; text-transform: uppercase; font-weight: 400; color: var(--darkGrey); letter-spacing: .5rem;
+    }
+
+    #email-box {
+      width: 80%;
+      padding: 19px 25px;
+      border-radius: 25px;
+      border: 1px solid;
+      border-color: var(--palePink);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .mail-section {
+      position: relative;
+
+    }
+
+    #error {
+      position: absolute;
+      left: 58%;
+      top: 22%;
+    }
+
+    .submit-btn {
+      padding: 17px 25px;
+      width: 100px;
+      border: none;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      border-radius: 25px;
+      margin: 0;
+      position: absolute;
+      right: 20%;
+      transition: .4s ease-in-out;
+    }
+
+    .submit-btn:hover {
+      cursor: pointer;
+      background: linear-gradient(135deg, hsl(0, 100%, 94%), hsl(0, 100%, 90%));
+      color: var(--palePink);
+      box-shadow: 1px 15px 30px var(--palePink);
+    }
+
+    .error-msg {
+      color: var(--softPink);
+      position: relative;
+      padding: 5px 50px;
+      animation: error;
+      animation-duration: .5s;
+    }
+
+    @keyframes error {
+      0% {
+        left: -25px;
+      }
+
+      25% {
+        left: 25px;
+      }
+
+      50% {
+        left: -25px;
+      }
+
+      75% {
+        left: 25px;
+      }
+
+      100% {
+        left: 0px;
+      }
+    }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+    @media screen and (max-width:750px) {
+      .hero{
+        flex-direction: column-reverse;
+        margin-top: 80px;
+      }
+      .hero-img img{
+        content: url(images/hero-mobile.jpg);
+      }
+      .hero-text{
+        text-align: center;
+        width: 100%;
+        margin-inline: auto !important;
+        padding: 20px 20px;
+      }
+      nav{
+        top: 2%;
+        left: 2%;
+      }
+      .heading-1, .heading-2{
+        font-size: 200%;
+      }
+      .submit-btn {
+        right: 10%;
+        width: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <nav>
+      <img src="images/logo.svg" alt="logo">
+    </nav>
+    <div class="hero">
+      <div class="hero-text">
+        <span class="heading-1">We're</span><br>
+        <span class="heading-2">coming
+          <br> soon</span> <br>
+
+        <p style="color:var(--palePink); font-size: 16px; padding: 2rem 0 2rem 0; line-height: 1.5;">Hello fellow
+          shoppers! We're currently building our new <br> fashion store.
+          Add your email below to stay up-to-date with announcements and our launch deals.</p>
+
+        <div class="mail-section">
+          <input type="email" name="email" id="email-box" placeholder="Email Address ">
+          <img src="images/icon-error.svg" alt="error" id="error" class="hidden">
+          <button type="submit" class="submit-btn"><img src="images/icon-arrow.svg" alt=""></button>
+          <p class="error-msg hidden">Please enter a valid email.</p>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="images/hero-desktop.jpg" height="100%" alt="Model">
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/nymr-05">Naimur Rahman</a>.
+    </p>
+  </footer>
+
+  <script>
+    var mail = document.querySelector("#email-box");
+    var btn = document.querySelector(".submit-btn");
+    var errico = document.querySelector("#error");
+    var errmsg = document.querySelector(".error-msg");
+    var span = document.querySelectorAll("span");
+    var para = document.querySelector("p");
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //googled
+
+    btn.addEventListener("click", () => {
+      if (mail.value.match(validRegex)) {
+        span[0].style.display = 'none';
+        span[1].innerHTML = "Thank <br> you";
+        para.innerHTML = "We will let you know when we launch awesome deals."
+        document.querySelector(".mail-section").style.display = 'none';
+      } else {
+        mail.style.borderColor = 'var(--softPink)';
+        errico.classList.remove('hidden');
+        errmsg.classList.remove('hidden');
+      }
+    })
+  </script>
+</body>
+
+</html>
