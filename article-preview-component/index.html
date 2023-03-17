@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+    :root{
+      --lightGrey: hsl(210, 46%, 95%);
+      --greyishBlue: hsl(212, 23%, 69%);
+      --darkBlue: hsl(217, 19%, 35%);
+      --darkGreyishBlue: hsl(214, 17%, 51%);
+    }
+    main{
+      min-height: 95vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    body{
+      background-color: var(--lightGrey);
+    }
+    .card{
+      display: flex;
+      position: relative;
+      width: 60%;
+      margin: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 10px 10px 50px lightgrey;
+    }
+    .card-img{
+      width: 100%;
+    }
+    .card-img img{
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      animation-name: fadeIn;
+      animation-duration: .5s;
+
+    }
+    .card-body{
+      font-family: 'Manrope', sans-serif;
+      padding: 2rem;
+    }
+    .article-header{
+      color: var(--darkBlue);
+    }
+    .article-body{
+      color: var(--darkGreyishBlue);
+      margin-bottom: 4rem;
+    }
+    .article-footer{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 3rem;
+      
+    }
+    .profile-section{
+      display: flex;
+    }
+    .profile-img{
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .profile-name{
+      font-weight: 700;
+      color: var(--darkBlue);
+    }
+    .upload-date{
+      color: var(--greyishBlue);
+    }
+    .share-btn{
+      padding: .4rem 1rem;
+      border-radius: 50%;
+      background-color: var(--lightGrey);
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .share-btn:hover, .share-btn-active{
+      background-color: var(--greyishBlue);
+    }
+    .share-btn-active >img{
+      fill: white;
+    }
+
+    .share-section{
+      background-color: var(--darkBlue);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: var(--greyishBlue);
+      border-radius: 10px;
+      padding: .8rem 1.5rem;
+      position: absolute;
+      bottom: 110%;
+      right: -15%;
+      font-size: 13px;
+      vertical-align: middle;
+    }
+    /* share section mobile start */
+    
+    /* share section mobile end  */
+    .share-section > img{
+      vertical-align: middle;
+    }
+    .share-section::after{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border: 5px solid;
+      border-color: var(--darkBlue) transparent transparent transparent;
+    }
+    .hidden{
+      display: none;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    /* media query start  */
+    @media screen and (max-width: 660px) {
+      .card{
+        flex-direction: column;
+        width: auto;
+      }
+      .card-body{
+        padding: 1rem;
+      }
+      .card-img img{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+      }
+      .share-btn{
+        padding: 0rem .5rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        z-index: 3;
+      }
+      .share-section{
+      position: absolute;
+      background-color: var(--darkBlue);
+      letter-spacing: 5px;
+      color: var(--greyishBlue);
+      width: 100%;
+      padding: 1.8rem 1rem 1.5rem;
+      margin-left: 0rem;
+      bottom: -1rem;
+      left: -1rem;
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      text-transform: uppercase;
+      animation: shareMobile .3s;
+    }
+    .share-section::after{
+      display: none;
+    }
+    }
+    /* media query end  */
+    /* animation start  */
+      @keyframes fadeIN {
+        from{
+          opacity: 0;
+        }
+        to{
+          opacity: 1;
+        }  
+      }
+      @keyframes shareMobile {
+        from{
+          left: 120%;
+          opacity: 0;
+          padding: .8rem 1rem .5rem;
+          border-top-right-radius: 50px;
+          border-top-left-radius: 50px;
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 50px;
+        }
+        to{
+          left: 0%;
+          opacity: 1;
+          padding: 1.8rem 1rem 1.5rem;
+          border-top-right-radius: 0px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+    /* animation end  */
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <div class="card-img">
+        <img src="images/drawers.jpg" alt="article-image">
+      </div>
+      <div class="card-body">
+        <section class="article-header">
+          <h1>Shift the overall look and feel by adding these wonderful 
+            touches to furniture in your home</h1>
+        </section>
+        <section class="article-body">
+          <p>Ever been in a room and felt like something was missing? Perhaps 
+            it felt slightly bare and uninviting. I’ve got some simple tips 
+            to help you make any room feel complete.</p>
+        </section>
+        <section class="article-footer">
+          <div class="profile-section">
+            <img src="images/avatar-michelle.jpg" class="profile-img" alt="profileImage">
+            <section class="name-date">
+              <span class="profile-name">Michelle Appleton</span> <br>
+              <span class="upload-date">28 Jun 2020</span>
+            </section>
+          </div>
+          <button class="share-btn"><img src="images/icon-share.svg" alt="share-ico"></button>
+          <div class="hidden share-section" id="share-section">share 
+            <a href="#"><img src="images/icon-facebook.svg" alt="facebook-ico"></a>
+            <a href="#"><img src="images/icon-twitter.svg" alt="twitter-ico"></a>
+            <a href="#"><img src="images/icon-pinterest.svg" alt="pinterest-ico"></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+    var shareBtn = document.querySelector(".share-btn");
+    var shareSection = document.querySelector("#share-section");
+
+    shareBtn.addEventListener('click', ()=>{
+      shareSection.classList.toggle("hidden");
+      shareBtn.classList.toggle("share-btn-active");
+    })
+   </script>
+</body>
+</html>
