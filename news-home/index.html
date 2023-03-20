@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+    :root{
+      --offWhite: hsl(36, 100%, 99%);
+      --greyishBlue: hsl(233, 8%, 79%);
+      --darkGreyishBlue: hsl(236, 13%, 42%);
+      --darkBlue: hsl(240, 100%, 5%);
+      --softOrange: hsl(35, 77%, 62%);
+      --softRed: hsl(5, 85%, 63%);
+    }
+    *{
+      font-family: 'Inter';
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      background-color: var(--offWhite);
+    }
+    nav{
+      width: 80%;
+      margin: 2rem auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .menu-btn{
+      background-color: transparent;
+      border: none;
+      display: none;
+    }
+    .nav-items{
+      list-style-type: none;
+      margin: 1rem;
+    }
+    .nav-links{
+      display: flex;
+    }
+    .nav-link{
+      text-decoration: none;
+      color: var(--darkGreyishBlue);
+    }
+    .nav-link:hover{
+      color: var(--softOrange);
+    }
+    main{
+      width: 80%;
+      margin-inline: auto;
+      margin-bottom: 2rem;
+    }
+    .grid-container{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: 1fr 1fr .5fr;
+      gap: 2rem;
+    }
+    .mega-article{
+      display: inline-grid;
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr .75fr;
+      gap: 1rem;
+    }
+    .mega-img{
+      grid-column: 1 / span 2;
+      grid-row: 1;
+      width: 100%;
+    }
+    .mega-header{
+      grid-column: 1;
+      grid-row: 2;
+      font-size: 3.5rem;
+      padding: 1rem;
+      color: var(--darkBlue);
+    }
+    .mega-description{
+      color: var(--darkGreyishBlue);
+      position: relative;
+      padding: 1rem;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .read-more{
+      background-color: var(--softRed);
+      color: var(--offWhite);
+      width: 70%;
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .5rem;
+      padding: .75rem 1rem;
+      transition: .4s ease-in-out;
+      font-size: 15px;
+      border: none;
+    }
+    .read-more:hover{
+      background-color: var(--darkBlue);
+    }
+    .side-section{
+      grid-column: 3;
+      grid-row: 1 / span 2;
+      background-color: var(--darkBlue);
+    }
+    .side-section h2{
+      color: var(--softOrange);
+      padding: 2rem;
+      font-size: 3rem;
+    }
+    .article-preview{
+      border-bottom: 2px solid var(--greyishBlue);
+      width: 80%;
+      margin-inline: auto;
+    }
+    .article-preview:last-child{
+      border-bottom: none;
+    }
+    .article-header{
+      color: var(--offWhite);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .article-description{
+      color: var(--greyishBlue);
+      margin-bottom: 1rem;
+    }
+    .featured-section{
+      grid-column: 1 / span 3;
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 2rem;
+    }
+    .featured-article{
+      display: grid;
+      grid-template-columns: .5fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 1rem;
+    }
+    .featured-article img{
+      width: 100%;
+    }
+    .featured-article-description{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 15px;
+    }
+    .featured-article-description h2{
+      font-size: 2rem;
+      color: var(--greyishBlue);
+    }
+    .featured-article-description h3{
+      color: var(--darkBlue);
+    }
+    .featured-article-description p{
+      color: var(--greyishBlue);
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @media screen and (max-width: 700px) {
+      nav{
+        width: 90%;
+      }
+      main{
+        width: 90%;
+      }
+      .navbar-nav{
+        position: absolute;
+        min-height: 100vh;
+        background-color: var(--offWhite);
+        width: 40%;
+        right: -100%;
+        top: 0;
+        padding: 2rem;
+        box-shadow: 0px 30px 200px black;
+        transition: .5s ease-in-out;
+        z-index: 1;
+      }
+
+      .menu-btn{
+        display: block;
+        float: right;
+      }
+      .nav-links{
+        padding-top: 30%;
+        flex-direction: column;
+      }
+      .nav-link{
+        color: var(--darkBlue);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .grid-container{
+        display: flex;
+        flex-direction: column;
+      }
+      .mega-article{
+        display: flex;
+        flex-direction: column;
+      }
+      .mega-article img{
+        content: url(assets/images/image-web-3-mobile.jpg);
+        padding: 0;
+      }
+      .mega-header{
+        font-size: 2rem;
+        padding: 0;
+      }
+      .mega-description{
+        display: block;
+        padding: 0;
+      }
+      .read-more{
+        margin-top: 1rem;
+      }
+      .featured-section{
+        display: flex;
+        flex-direction: column;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navbar-brand">
+        <img src="assets/images/logo.svg" alt="logo">
+      </div>
+      <button class="menu-btn" id="menu-open"><img src="assets/images/icon-menu.svg" alt="menubtn"></button>
+
+      <div class="navbar-nav">
+        <button class="menu-btn" id="menu-close"><img src="assets/images/icon-menu-close.svg" alt="menubtn"></button>
+        <ul class="nav-links">
+          <li class="nav-items"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-items"><a href="#" class="nav-link">New</a></li>
+          <li class="nav-items"><a href="#" class="nav-link">Popular</a></li>
+          <li class="nav-items"><a href="#" class="nav-link">Trending</a></li>
+          <li class="nav-items"><a href="#" class="nav-link">Catagories</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="grid-container">
+      <div class="mega-article">
+        <img src="assets/images/image-web-3-desktop.jpg" alt="mega-article-img" class="mega-img">
+        <h2 class="mega-header">The Bright Future of Web 3.0?</h2>
+        <section class="mega-description"> <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?</p>
+          <button class="read-more">Read more</button>
+        </section>
+      </div>
+      <div class="side-section">
+        <h2>New</h2>
+        <section class="article-preview">
+          <h3 class="article-header">Hydrogen VS Electric Cars</h3>
+          <p class="article-description">Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </section>
+        <section class="article-preview">
+          <h3 class="article-header">The Downsides of AI Artistry</h3>
+          <p class="article-description">What are the possible adverse effects of on-demand AI image generation?</p>
+        </section>
+        <section class="article-preview">
+          <h3 class="article-header">Is VC Funding Drying Up?</h3>
+          <p class="article-description">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </section>
+      </div>
+      <div class="featured-section">
+        <section class="featured-article">
+          <img src="assets/images/image-retro-pcs.jpg" alt="featured-article-img" class="featured-img">
+          <div class="featured-article-description">
+            <h2>01</h2>
+            <h3>Reviving Retro PCs</h3>
+            <p>What happens when old PCs are given modern upgrades?</p></div>
+        </section>
+        <section class="featured-article">
+          <img src="assets/images/image-top-laptops.jpg" alt="featured-article-img" class="featured-img">
+          <div class="featured-article-description">
+            <h2>02</h2>
+            <h3>Top 10 Laptops of 2022</h3>
+            <p>Our best picks for various needs and budgets.</p>
+          </div>
+        </section>
+        <section class="featured-article">
+          <img src="assets/images/image-gaming-growth.jpg" alt="featured-article-img" class="featured-img">
+          <div class="featured-article-description">
+            <h2>03</h2>
+            <h3>The Growth of Gaming</h3>
+            <p>How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/nymr-05">Naimur Rahman</a>.
+  </div>
+  <script>
+    var menuOpen = document.querySelector("#menu-open");
+    var navMenu = document.querySelector(".navbar-nav");
+    var menuClose = document.querySelector("#menu-close");
+    var main = document.querySelector("main");
+
+    menuOpen.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+
+
+    function openMenu(){
+      navMenu.style.right = '0';
+      
+    }
+    function closeMenu(){
+      navMenu.style.right = '-100%';
+      
+    }
+  </script>
+</body>
+</html>
