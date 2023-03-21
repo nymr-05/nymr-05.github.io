@@ -118,7 +118,7 @@
     }
     .side-section h2{
       color: var(--softOrange);
-      padding: 2rem;
+      padding: 1rem 2rem;
       font-size: 3rem;
     }
     .article-preview{
@@ -137,6 +137,7 @@
     .article-description{
       color: var(--greyishBlue);
       margin-bottom: 1rem;
+      font-size: 15px;
     }
     .featured-section{
       grid-column: 1 / span 3;
@@ -187,7 +188,6 @@
         right: -100%;
         top: 0;
         padding: 2rem;
-        box-shadow: 0px 30px 200px black;
         transition: .5s ease-in-out;
         z-index: 1;
       }
@@ -317,7 +317,7 @@
     var menuOpen = document.querySelector("#menu-open");
     var navMenu = document.querySelector(".navbar-nav");
     var menuClose = document.querySelector("#menu-close");
-    var main = document.querySelector("main");
+    var main = document.querySelector("body");
 
     menuOpen.addEventListener('click', openMenu);
     menuClose.addEventListener('click', closeMenu);
@@ -325,11 +325,11 @@
 
     function openMenu(){
       navMenu.style.right = '0';
-      
+      main.style.backgroundColor = '#0000004a';
     }
     function closeMenu(){
       navMenu.style.right = '-100%';
-      
+      main.style.backgroundColor = 'var(--offWhite)';
     }
   </script>
 </body>
