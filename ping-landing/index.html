@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+  <!-- fontawesome cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+    *{
+      font-family: 'Libre Franklin';
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      --darkBlue: hsl(209, 33%, 12%);
+      --brightBlue: hsl(223, 87%, 63%);
+      --paleBlue: hsl(223, 100%, 88%);
+      --pinkRed: hsl(354, 100%, 66%);
+      --gray: hsl(0, 0%, 59%)
+    }
+    main{
+      display: flex;
+      margin-inline: auto;
+      align-items: center;
+      flex-direction: column;
+      width: 60%;
+    }
+    .brand{
+      margin: 3rem;
+    }
+    .heading{
+      font-size: 3rem;
+    }
+    .light-text{
+      font-weight: 300;
+      color: var(--gray);
+    }
+    .bold-text{
+      color: var(--darkBlue);
+      font-weight: 700;
+    }
+    .sub-heading{
+      margin: 1rem;
+      font-weight: 600;
+      color: var(--darkBlue);
+      font-size: 20px;
+    }
+    .email-section{
+      display: flex;
+      width: 60%;
+      gap: 1rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .email{
+      width: 70%;
+    }
+    .error-msg{
+      color: var(--pinkRed);
+      font-size: 15px;
+      margin-left: 1rem;
+      display: none;
+      position: relative;
+      animation: error;
+      animation-duration: .5s;
+    }
+    .email-input{
+      padding: 1rem 3rem;
+      width: 70%;
+      border: 1px solid var(--paleBlue);
+      border-radius: 25px;
+    }
+    .email-input::placeholder{
+      color: var(--paleBlue);
+    }
+    #submit-btn{
+      width: 20%;
+      border-radius: 25px;
+      background-color: var(--brightBlue);
+      color: white;
+      border: none;
+      box-shadow: 0px 10px 20px var(--paleBlue);
+      cursor: pointer;
+      transition: .3s ease-in-out;
+    }
+    #submit-btn:hover{
+      box-shadow: 0px 0px 20px var(--paleBlue);
+      opacity: .8;
+    }
+    .page-img{
+      margin: 4rem;
+    }
+    .page-img img{
+      width: 100%;
+    }
+    .social-section{
+      display: flex;
+      gap: 1rem;
+      margin: 2rem;
+      justify-content: center;
+    }
+    .social-items{
+      list-style-type: none;
+    }
+    .social-icons{
+      padding: .5rem .7rem;
+      border: 1px solid #8080805a;
+      border-radius: 50%;
+      color: var(--brightBlue);
+    }
+    .copyright-section{
+      color: var(--gray);
+    }
+
+    @keyframes error {
+      0% {
+        left: -25px;
+      }
+
+      25% {
+        left: 25px;
+      }
+
+      50% {
+        left: -25px;
+      }
+
+      75% {
+        left: 25px;
+      }
+
+      100% {
+        left: 0px;
+      }
+    }
+
+
+    .attribution { font-size: 11px; text-align: center; margin: 1rem;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media (max-width: 600px){
+      main{
+        width: 90%;
+        margin-inline: auto;
+      }
+      .heading{
+        font-size: 1.5rem;
+      }
+      .sub-heading{
+        font-size: .75rem;
+      }
+      .email{
+        width: 71%;
+      }
+      .email-section{
+        flex-direction: column;
+        width: 90%;
+      }
+      .email-input{
+        width: 100%;
+        align-items: start;
+      }
+      #submit-btn{
+        width: 100%;
+        padding: 1rem;
+      }
+      .page-img{
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <img src="images/logo.svg" alt="brand-logo">
+    </div>
+    <h1 class="heading">
+      <span class="light-text">We are launching</span>
+      <span class="bold-text">soon!</span>
+    </h1>
+    <h2 class="sub-heading">Subscribe and get notified</h2>
+    <div class="email-section">
+      <div class="email">
+        <input type="email" name="email" id="email" class="email-input" placeholder="Your email here">
+        <p class="error-msg">Please provide a valid email address.</p>
+      </div>
+      <button type="submit" id="submit-btn">Notify Me</button>
+    </div>
+    <div class="page-img">
+      <img src="images/illustration-dashboard.png" alt="landing-img">
+    </div>
+      <ul class="social-section">
+        <li class="social-items"><a href="#" class="social-icons"><i class="fa-brands fa-facebook"></i></a></li>
+        <li class="social-items"><a href="#" class="social-icons"><i class="fa-brands fa-twitter"></i></a></li>
+        <li class="social-items"><a href="#" class="social-icons"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+    <div class="copyright-section">
+      &copy; Copyright Ping. All rights reserved.
+    </div>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/nymr-05">Naimur Rahman</a>.
+    </p>
+  </footer>
+  <script>
+    var mail = document.querySelector('#email');
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //googled
+    var submit = document.querySelector('#submit-btn');
+    var errMsg = document.querySelector(".error-msg");
+
+    submit.addEventListener('click', mailChecker);
+
+    function mailChecker(){
+      if(mail.value.match(validRegex)){
+        errMsg.style.display = 'none';
+        mail.style.borderColor = '';
+        alert('Thank you for subscribing! We will let you know when we launch.');
+        mail.value = '';
+      }else{
+        errMsg.style.display = 'block';
+        mail.style.borderColor = 'red';
+      }
+    };
+  </script>
+</body>
+</html>
