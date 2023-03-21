@@ -26,7 +26,6 @@
     }
     body{
       background-color: var(--offWhite);
-      overflow: hidden;
     }
     nav{
       width: 80%;
@@ -42,6 +41,9 @@
     .nav-items{
       list-style-type: none;
       margin: 1rem;
+    }
+    .nav-items:last-child{
+      margin-right: 0;
     }
     .nav-links{
       display: flex;
@@ -178,7 +180,7 @@
         width: 90%;
       }
       .navbar-nav{
-        position: absolute;
+        position: fixed;
         min-height: 100vh;
         background-color: var(--offWhite);
         width: 40%;
