@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+    :root{
+      --red: hsl(1, 90%, 64%);
+      --blue: hsl(219, 85%, 26%);
+      --lightGrey: hsl(210, 60%, 98%);
+      --lightGrey1: hsl(211, 68%, 94%);
+      --lightGrey2: hsl(205, 33%, 90%);
+      --greyishBlue: hsl(219, 14%, 63%);
+      --darkGreyishBlue: hsl(219, 12%, 42%);
+      --darkBlue: hsl(224, 21%, 14%);
+    }
+    body{
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: hsl(210, 60%, 98%);
+
+    }
+    main{
+      height: auto;
+    }
+    .content{
+      background-color: white;
+      width: 50%;
+      margin-inline: auto;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+    .content-head{
+      display: flex;
+      justify-content: space-between;
+    }
+    .content-title{
+      font-weight: bold;
+      color: var(--darkBlue);
+      position: relative;
+      font-size: larger;
+    }
+    .badge{
+      font-size: 10px;
+      background-color: var(--blue);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 5px;
+      position: relative;
+      bottom: 8px;
+    }
+    #read-btn{
+      border: none;
+      background-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: bold;
+      color: var(--greyishBlue);
+      font-size: 12px;
+    }
+    #read-btn:hover, .name:hover, .event:hover{
+      color: var(--blue);
+      cursor: pointer;
+    }
+    .content-body{
+      margin-top: 2rem;
+    }
+    .notification{
+      display: flex;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 5px;
+    }
+    .picture{
+      margin-right: 10px;
+    }
+    .profile-pic{
+      height: 2rem;
+      width: 2rem;
+    }
+    .notification-body{
+      color: var(--greyishBlue);
+      font-size: 15px;
+    }
+    .name{
+      font-weight: bold;
+      color: var(--darkBlue);
+    }
+    .event{
+      font-weight: bold;
+      color: var(--darkGreyishBlue);
+    }
+    .group{
+      font-weight: bold;
+      color: var(--blue);
+    }
+    .time{
+      font-size: 12px;
+      color: var(--greyishBlue);
+    }
+    .message{
+      border: 1px solid var(--lightGrey2);
+      border-radius: 5px;
+      color: var(--darkGreyishBlue);
+      padding: 15px;
+      font-size: 12px;
+    }
+    .unread{
+      background-color: var(--lightGrey);
+    }
+    .unread::after{
+      content: "";
+      height: 8px;
+      width: 8px;
+      background-color: var(--red);
+      border-radius: 50%;
+      position: relative;
+      top: 6px;
+      left: 5px
+    }
+    @media screen and (max-width:600px) {
+      .content{
+        width: 100%;
+        margin-top: 0;
+      
+      }
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="content">
+      <div class="content-head">
+        <div class="content-title">Notifications <span class="badge">3</span></div>
+        <div class="button"><button id="read-btn" onclick="read()">Mark all as read</button></div>
+      </div>
+      <div class="content-body">
+        <div class="notification unread">
+          <div class="picture">
+            <img src="assets/images/avatar-mark-webber.webp" alt="picture" class="profile-pic">
+          </div>
+          <div class="notification-body"><span class="name">Mark Webber</span> reacted to your recent post <span class="event">My first tournament today!</span><br>
+            <span class="time">1m ago</span>
+          </div>
+        </div>
+        <div class="notification unread">
+          <div class="picture">
+            <img class="profile-pic" src="assets/images/avatar-angela-gray.webp" alt="Angela Gray">
+          </div>
+          <div class="notification-body"><span class="name">Angela Gray</span> started follwing you <br>
+            <span class="time">5m ago</span>
+          </div>
+        </div>
+        <div class="notification unread">
+          <div class="picture">
+            <img class="profile-pic" src="assets/images/avatar-jacob-thompson.webp" alt="jacob thompson">
+          </div>
+          <div class="notification-body"><span class="name">Jacob Thompson</span> has joined your group <span class="group">Chess Club</span> <br>
+            <span class="time">5m ago</span>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="picture">
+            <img src="assets/images/avatar-rizky-hasanuddin.webp" alt="Rizky Hassanuddin" class="profile-pic">
+          </div>
+          <div class="notification-body"><span class="name">Rizky Hassanuddin</span> has sent you a private message <br>
+            <span class="time">5 days ago</span>
+            <div >
+              <p class="message">Hello, Thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.</p>
+            </div>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="picture">
+            <img class="profile-pic" src="assets/images/avatar-kimberly-smith.webp" alt="Kimberly Smith">
+          </div>
+          <div class="notification-body"><span class="name">Kimberly Smith</span> commented on your picture <br>
+            <span class="time">1 week ago</span>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="picture">
+            <img src="assets/images/avatar-nathan-peterson.webp" alt="Nathan Peterson" class="profile-pic">
+          </div>
+          <div class="notification-body"><span class="name">Nathan Peterson</span> reacted to your recent post <span class="event">5 end-game strategies to increase your win rate</span><br>
+            <span class="time">2 weeks ago</span>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="picture">
+            <img class="profile-pic" src="assets/images/avatar-anna-kim.webp" alt="Anna Kim">
+          </div>
+          <div class="notification-body"><span class="name">Anna Kim</span> left the group <span class="group">Chess Club</span> <br>
+            <span class="time">2 weeks ago</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/nymr-05">Naimur Rahman</a>.
+  </div>
+
+  <script>
+    var noti = document.getElementsByClassName('notification');
+    var btn = document.querySelector("#read-btn");
+    var badge = document.querySelector(".badge");
+    
+    function read(){
+      badge.style.display="none";
+      for(var i=0; i<=noti.length; i++){
+        noti[i].classList.remove('unread');
+      }
+    }
+    btn.addEventListener('click', read);
+    
+  </script>
+</body>
+</html>
